@@ -1,0 +1,27 @@
+name: "DT Mini Browser Server"
+version: "latest"               # Muss zum Tag des Images passen (hier: latest)
+slug: "dt-mini-server"
+description: "Mini-Browser-Server für LAN-Zugriff"
+arch:
+  - amd64
+  - aarch64
+image: "ghcr.io/danltech/dt-mini-browser-server"
+startup: "application"
+boot: "auto"
+init: true                      # entspricht deinem init: true in Compose
+
+ports:
+  8080/tcp: 8080                # Container-Port 8080 → Host-Port 8080
+ports_description:
+  8080/tcp: "Web-UI des Mini-Servers"
+
+webui: "http://[HOST]:[PORT:8080]/"   # Praktisch für den direkten Link in HA
+
+map:
+  - type: data                  # Persistentes /data (entspricht deinem Volume)
+    read_only: false
+
+options:
+  mini_locale: "de-AT"
+schema:
+  mini_locale: "str"
