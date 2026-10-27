@@ -5,7 +5,8 @@ description: "Mini-Browser-Server für LAN-Zugriff"
 arch:
   - amd64
   - aarch64
-image: "ghcr.io/danltech/dt-mini-browser-server"
+# image: "ghcr.io/danltech/dt-mini-browser-server"
+build: true
 startup: "application"
 boot: "auto"
 init: true                      # entspricht deinem init: true in Compose
@@ -25,3 +26,6 @@ options:
   mini_locale: "de-AT"
 schema:
   mini_locale: "str"
+
+environment:
+  MINI_DEBUG_DIR: "/data/debug"
