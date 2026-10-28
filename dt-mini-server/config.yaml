@@ -22,10 +22,11 @@ map:
   - type: data                  # Persistentes /data (entspricht deinem Volume)
     read_only: false
 
-options:
-  MINI_LOCALE: "de-AT"
-schema:
-  MINI_LOCALE: "str"
+# options:
+#   MINI_LOCALE: "de-AT"
+# schema:
+#   MINI_LOCALE: "str"
 
 environment:
   MINI_DEBUG_DIR: "/data/debug"
+  MINI_LOCALE: "de-AT"
