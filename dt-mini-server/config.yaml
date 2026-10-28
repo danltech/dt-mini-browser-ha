@@ -23,9 +23,9 @@ map:
     read_only: false
 
 options:
-  mini_locale: "de-AT"
+  MINI_LOCALE: "de-AT"
 schema:
-  mini_locale: "str"
+  MINI_LOCALE: "str"
 
 environment:
   MINI_DEBUG_DIR: "/data/debug"
